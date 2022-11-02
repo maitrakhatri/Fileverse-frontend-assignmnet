@@ -1,0 +1,19 @@
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #ffdf0a;
+}
+
+button {
+    outline: none;
+    border: none;
+    color: #ffffff;
+    background-color: #000000;
+    padding: .5rem 2.5rem;
+    border-radius: .75rem;
+    cursor: pointer;
+}

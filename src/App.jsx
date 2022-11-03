@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/account"
-          element={accountNo !== undefined ? <Account /> : <Home />}
+          element={accountNo !== undefined ? <Account /> : <Home />} //if not connected with MetaMask and tries to access account page from URL then show the Homepage instead of account page
         />
       </Routes>
     </div>

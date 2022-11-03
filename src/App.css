@@ -27,3 +27,43 @@ button {
 .Account nav #right {
     margin-left: auto;
 }
+
+.Account h1 {
+    text-align: center;
+}
+
+.NFTCard img {
+    width: 18rem;
+    height: auto;
+}
+
+.NFTCard {
+    background-color: rgb(247, 247, 255);
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 5rem;
+}
+
+.NFTCard .details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.NFT-Display .address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.NFT-Display {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

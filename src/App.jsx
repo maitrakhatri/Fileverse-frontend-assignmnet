@@ -5,14 +5,16 @@ import { Home } from "./Home";
 import { useMetaMask } from "./MetaMaskContext";
 
 function App() {
-
-  const { accountNo } = useMetaMask()
+  const { accountNo } = useMetaMask();
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/account" element={accountNo!==undefined?<Account/> : <Home/> } />
+        <Route
+          path="/account"
+          element={accountNo !== undefined ? <Account /> : <Home />}
+        />
       </Routes>
     </div>
   );

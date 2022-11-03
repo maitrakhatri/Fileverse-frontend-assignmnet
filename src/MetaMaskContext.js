@@ -1,6 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { useNavigate } from "react-router-dom";
+import { Network, Alchemy } from "alchemy-sdk";
 
 const MetaMaskContext = createContext();
 
@@ -37,12 +38,31 @@ const MetaMaskProvider = ({ children }) => {
     const checkEthereum = () => {
         if (typeof window.ethereum !== "undefined") {
             getAccount();
+            fetchNFTs();
         } else {
             setConnectStatusMsg("Install MetaMask first to connect");
         }
     };
 
-    return <MetaMaskContext.Provider value={{ accountNo, connectStatusMsg, balance, checkEthereum }}>
+    const [allNFTs, setAllNFTs] = useState([])
+    const [displayedNFTs, setDisplayedNFTs] = useState([])
+
+    const settings = {
+        apiKey: "demo",
+        network: Network.ETH_MAINNET,
+    };
+    const alchemy = new Alchemy(settings);
+
+    const fetchNFTs = async () => {
+        const allFetchedNFTs = await alchemy.nft.getNftsForOwner("0x983110309620D911731Ac0932219af06091b6744");
+        setAllNFTs(allFetchedNFTs.ownedNfts)
+    }
+
+    useEffect(() => {
+        setDisplayedNFTs(allNFTs.slice(0, 10))
+    }, [allNFTs])
+
+    return <MetaMaskContext.Provider value={{ accountNo, connectStatusMsg, balance, checkEthereum, displayedNFTs }}>
         {children}
     </MetaMaskContext.Provider>
 }

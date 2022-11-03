@@ -1,4 +1,4 @@
-.App {
+.Home {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,4 +16,14 @@ button {
     padding: .5rem 2.5rem;
     border-radius: .75rem;
     cursor: pointer;
+}
+
+.Account nav {
+    background-color: #ffdf0a;
+    display: flex;
+    padding: 0 1rem 0 1rem;
+}
+
+.Account nav #right {
+    margin-left: auto;
 }

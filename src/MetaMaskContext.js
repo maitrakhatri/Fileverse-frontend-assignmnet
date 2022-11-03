@@ -6,7 +6,7 @@ const MetaMaskContext = createContext();
 
 const MetaMaskProvider = ({ children }) => {
 
-    const [accountNo, setAccountNo] = useState();
+    const [accountNo, setAccountNo] = useState(undefined);
     const [balance, setBalance] = useState();
     const [connectStatusMsg, setConnectStatusMsg] = useState(
         "Click to connect your MetaMask"

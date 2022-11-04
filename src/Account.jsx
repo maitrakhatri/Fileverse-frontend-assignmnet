@@ -16,11 +16,11 @@ function Account() {
       <div className="NFT-Display">
         {displayedNFTs.map((item) => (
           <NFTCard
-            address={item.contract.address}
-            name={item.contract.name}
-            tokenType={item.contract.tokenType}
-            description={item.description}
-            src={item.media[0].gateway}
+            address={item.contract?.address}
+            name={item.contract?.name}
+            tokenType={item?.contract?.tokenType}
+            description={item?.description}
+            src={item.media[0]?.gateway}
           />
         ))}
       </div>

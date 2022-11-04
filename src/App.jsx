@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import { Account } from "./Account";
+import { Account, Home } from "./Pages";
 import "./App.css";
-import { Home } from "./Home";
-import { useMetaMask } from "./MetaMaskContext";
+import { useMetaMask } from "./Context/MetaMaskContext.js";
 
 function App() {
   const { accountNo } = useMetaMask();

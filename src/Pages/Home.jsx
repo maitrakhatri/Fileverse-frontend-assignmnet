@@ -1,4 +1,4 @@
-import { useMetaMask } from "./MetaMaskContext.js";
+import { useMetaMask } from "../Context/MetaMaskContext.js";
 
 function Home() {
   const { checkEthereum, connectStatusMsg } = useMetaMask();

@@ -1,5 +1,5 @@
-import { useMetaMask } from "./MetaMaskContext.js";
-import { NFTCard } from "./NFTCard.jsx";
+import { useMetaMask } from "../Context/MetaMaskContext.js";
+import { NFTCard } from "../Components/NFTCard.jsx";
 
 function Account() {
   const { accountNo, balance, displayedNFTs } = useMetaMask();

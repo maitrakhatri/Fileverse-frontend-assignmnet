@@ -32,7 +32,7 @@ const MetaMaskProvider = ({ children }) => {
         setAccountNo(accounts[0]);// selecting the first account
 
         getBalance(accounts[0]);// fetching balace of the first account
-        fetchNFTs("0x983110309620D911731Ac0932219af06091b6744");
+        fetchNFTs(accounts[0]);
         
         setTimeout(() => {
             navigate("/account")

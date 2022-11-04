@@ -11,7 +11,7 @@ const NFTCard = ({ address, name, tokenType, description, src }) => {
               {`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}
             </p>
 
-            <a href={`https://etherscan.io/token/${address}`} target="_blank">
+            <a href={`https://etherscan.io/token/${address}`} target="_blank" rel="noreferrer">
               {`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}
             </a>
           </div>

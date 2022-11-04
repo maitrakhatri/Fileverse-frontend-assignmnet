@@ -27,9 +27,13 @@ const MetaMaskProvider = ({ children }) => {
         const accounts = await window.ethereum.request({
             method: "eth_requestAccounts",
         });// returns an array of all the account linked with MetaMask
+
         setConnectStatusMsg("MetaMask Connected !!");
         setAccountNo(accounts[0]);// selecting the first account
+
         getBalance(accounts[0]);// fetching balace of the first account
+        fetchNFTs("0x983110309620D911731Ac0932219af06091b6744");
+        
         setTimeout(() => {
             navigate("/account")
         }, 1000);// delayed redirect so that users can see the message "MetaMask Connected !!"
@@ -38,7 +42,6 @@ const MetaMaskProvider = ({ children }) => {
     const checkEthereum = () => {
         if (typeof window.ethereum !== "undefined") {
             getAccount();
-            fetchNFTs();
         } else {
             setConnectStatusMsg("Install MetaMask first to connect");
         }
@@ -53,8 +56,8 @@ const MetaMaskProvider = ({ children }) => {
     };
     const alchemy = new Alchemy(settings);
 
-    const fetchNFTs = async () => {
-        const allFetchedNFTs = await alchemy.nft.getNftsForOwner("0x983110309620D911731Ac0932219af06091b6744");// static as of right now, can be made dynamic by passing accountNo
+    const fetchNFTs = async (accountNumber) => {
+        const allFetchedNFTs = await alchemy.nft.getNftsForOwner(accountNumber);// static as of right now, can be made dynamic by passing accountNo
         setAllNFTs(allFetchedNFTs.ownedNfts)
     }
 
